@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "gamemanagement"
+version = "0.1.0"
+description = ""
+authors = ["Aniol0012 <aniol0012@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
