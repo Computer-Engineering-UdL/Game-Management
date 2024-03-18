@@ -25,6 +25,7 @@ jobs:
           output-file: 'CHANGELOG.md'
           skip-version-file: 'true'
           skip-commit: 'true'
+          skip-git-pull: 'true'
 
       - name: Add Changelog to PR
         uses: peter-evans/create-or-update-comment@v1
