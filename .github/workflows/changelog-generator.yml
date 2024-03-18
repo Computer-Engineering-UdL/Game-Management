@@ -35,4 +35,4 @@ jobs:
           body: |
             ## Changelog
             ${{ steps.changelog.outputs.changelog }}
-          edit-mode: replace
+          edit-mode: replace 
