@@ -35,6 +35,17 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "prettier"
+version = "0.0.7"
+description = "Properly pprint of nested objects"
+optional = false
+python-versions = "*"
+files = [
+    {file = "prettier-0.0.7-py3-none-any.whl", hash = "sha256:20e76791de41cafe481328dd49552303f29ca192151cee1b120c26f66cae9bfc"},
+    {file = "prettier-0.0.7.tar.gz", hash = "sha256:6c34b8cd09fd9c8956c05d6395ea3f575e0122dce494ba57685c07065abed427"},
+]
+
+[[package]]
 name = "ruff"
 version = "0.3.3"
 description = "An extremely fast Python linter and code formatter, written in Rust."
@@ -90,4 +101,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "1d36def221e2fc4d34a0b71e089ed1bc27747bb492e8d2ad9fb47d8230dab9fb"
+content-hash = "b1dc129b9dec491e8c515dded964dbe3de62c31c235f3cc6cc64780d58dfd22b"

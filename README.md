@@ -32,9 +32,24 @@ cd Game-Management
 
 3. Install the required packages using [Poetry](https://python-poetry.org/)
 
-```bash
-poetry install
-```
+- **Option 1**: In case you want to develop the project, you can install the development dependencies by running the following command:
+    ```bash
+    poetry install
+    ```
+    Remember to activate the virtual environment by running the following command:
+    ```bash
+    poetry shell
+    ```
+
+<!-- > [!NOTE] -->
+<!-- > For more information check the [CONTRIBUTING.md](.github/CONTRIBUTING.md) file. -->
+
+
+- **Option 2**: In case you want to run the project, you can install the production dependencies by running the following command:
+
+    ```bash
+    poetry install --no-dev
+    ```
 
 ## Usage
 
