@@ -1,7 +1,7 @@
 # Game-Management - _KeepGaming_
 
-![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django?style=plastic)
-[![Django](https://img.shields.io/badge/django-5.0.2-green.svg?style=plastic)](https://djangoproject.com)
+![Python Version](https://img.shields.io/badge/python-3.11-blue.svg?style=plastic)
+[![Django](https://img.shields.io/badge/django-5.0.3-green.svg?style=plastic)](https://djangoproject.com)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 
 ![Contributors](https://img.shields.io/github/contributors/Computer-Engineering-UdL/Game-Management.svg?style=plastic&color=blue)
