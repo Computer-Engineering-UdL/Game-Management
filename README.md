@@ -74,9 +74,9 @@ In order to organize the work, we have divided the project into different sector
 | Project Management | Aniol                        |
 | Deployment         | Aleix                        |
 
-<!--## Contributing -->
+## Contributing
 
-<!--To contribute to this project go to the [CONTRIBUTING.md](.github/CONTRIBUTING.md) file.-->
+To contribute to this project go to the [CONTRIBUTING](.github/CONTRIBUTING.md) file.
 
 ## Licence
 
