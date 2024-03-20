@@ -38,12 +38,16 @@ by at least one maintainer. The pull request should also pass the following chec
 - **Ruff**: Every pull request should pass the Ruff checks in order to be merged. In order to check the code style, run the
   following command:
   ```bash
-  ruff
+  ruff format
   ```
   To ignore any file or directory use the `--exclude` flag, for example:
   ```bash
-  ruff --exclude=venv,migrations,__pycache__,.git,docs,build,dist
+  ruff format --exclude=venv,migrations,__pycache__,.git,docs,build,dist
   ```
+  Take in mind that ruff also accept the check command to check the code style without formatting it.
+  ```bash
+    ruff check
+    ```
 - **Prettier**: Every pull request should pass the Prettier checks in order to be merged. In order to check the code style,
   run the following command:
   ```bash
