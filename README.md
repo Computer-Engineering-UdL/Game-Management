@@ -1,4 +1,4 @@
-# Game-Management - _KeepGaming_
+# Game-Management
 
 ![Python Version](https://img.shields.io/badge/python-3.11-blue.svg?style=plastic)
 [![Django](https://img.shields.io/badge/django-5.0.3-green.svg?style=plastic)](https://djangoproject.com)
