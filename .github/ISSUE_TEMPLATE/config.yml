@@ -6,5 +6,5 @@ issue_templates:
     title: "[BUG] "
   - name: Feature request
     description: Request a new feature
-    labels: [feature]
+    labels: [task]
     title: "[FEATURE] "
