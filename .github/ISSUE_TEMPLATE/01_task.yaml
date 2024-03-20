@@ -1,0 +1,47 @@
+name: Task Template
+description: Use this template to create new tasks.
+title: '[TASK]: '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > [!NOTE]
+        > Remember that all commits must follow the [Conventional Commits](https://conventionalcommits.org) specification.
+
+        > [!IMPORTANT]
+        > To implement this issue, create a branch using the Development label. Once the issue is completed, a pull request to the [development](https://github.com/Computer-Engineering-UdL/Game-Management/tree/development) branch is required.
+  - type: textarea
+    id: detailed-description
+    attributes:
+      label: Detailed Description
+      description: Provide all the details needed to understand the task.
+      placeholder: 'Detailed description of the task...'
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: Select the priority of this task.
+      options:
+        - Low
+        - Medium
+        - High
+      required: true
+  - type: checkboxes
+    id: tags
+    attributes:
+      label: Tags
+      description: Select all tags that apply to this task.
+      options:
+        - documentation
+        - refactoring
+        - enhancement
+        - bug
+        - new feature
+  - type: input
+    id: development-branch-name
+    attributes:
+      label: Development Branch Name
+      description: Provide a name for the development branch following the naming convention.
+      placeholder: 'feature/new-feature'
+      required: true
