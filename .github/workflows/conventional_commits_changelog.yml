@@ -31,6 +31,6 @@ jobs:
       - name: Generate Changelog and Create Release
         run: |
           standard-version --release-as minor
-          git push --follow-tags origin main
+          git push --follow-tags origin ${{ github.ref_name }}
         env:
           GH_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
