@@ -27,27 +27,6 @@ body:
         - Low
         - Medium
         - High
+        - None
     validations:
       required: true
-  - type: checkboxes
-    id: tags
-    attributes:
-      label: Tags
-      description: Select all tags that apply to this task.
-      options:
-        - label: documentation
-        - label: refactoring
-        - label: enhancement
-        - label: bug
-        - label: new feature
-  - type: input
-    id: development-branch-name
-    attributes:
-      label: Development Branch Name
-      description: Provide a name for the development branch following the naming convention.
-      placeholder: 'feature/new-feature'
-    validations:
-      required: true
-
-
-
