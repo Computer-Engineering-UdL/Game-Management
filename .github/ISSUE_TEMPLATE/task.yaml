@@ -16,6 +16,7 @@ body:
       label: Detailed Description
       description: Provide all the details needed to understand the task.
       placeholder: 'Detailed description of the task...'
+    validations:
       required: true
   - type: dropdown
     id: priority
@@ -26,6 +27,7 @@ body:
         - Low
         - Medium
         - High
+    validations:
       required: true
   - type: checkboxes
     id: tags
@@ -33,15 +35,19 @@ body:
       label: Tags
       description: Select all tags that apply to this task.
       options:
-        - documentation
-        - refactoring
-        - enhancement
-        - bug
-        - new feature
+        - label: documentation
+        - label: refactoring
+        - label: enhancement
+        - label: bug
+        - label: new feature
   - type: input
     id: development-branch-name
     attributes:
       label: Development Branch Name
       description: Provide a name for the development branch following the naming convention.
       placeholder: 'feature/new-feature'
+    validations:
       required: true
+
+
+
