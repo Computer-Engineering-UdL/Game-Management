@@ -27,6 +27,5 @@ body:
         - Low
         - Medium
         - High
-        - None
     validations:
       required: true
