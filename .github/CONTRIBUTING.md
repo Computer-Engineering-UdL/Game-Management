@@ -30,7 +30,43 @@ Where `<type>` can be one of the following:
 - `init`: Initial commit.
 - `other`: Any other type of change.
 
-### 2. Pull requests
+### 2. Poetry
+
+This project uses [Poetry](https://python-poetry.org/) to manage the dependencies. In order to install the dependencies,
+run the following command:
+
+```bash
+poetry install
+```
+
+To add a new dependency, run the following command:
+
+```bash
+poetry add <dependency>
+```
+
+But if you add a development dependency, run the following command:
+
+```bash
+poetry add --dev <dependency>
+```
+
+> [!NOTE]
+> Using the `--dev` flag is important to differentiate between production and development dependencies.
+
+To remove a dependency, run the following command:
+
+```bash
+poetry remove <dependency>
+```
+
+To update a dependency, run the following command:
+
+```bash
+poetry update <dependency>
+```
+
+### 3. Pull requests
 
 Every pull request should pass its checks in order to be merged. To merge a pull request, it is necessary to be reviewed
 by at least one maintainer. The pull request should also pass the following checks:
