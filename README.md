@@ -41,8 +41,8 @@ cd Game-Management
     poetry shell
     ```
 
-<!-- > [!NOTE] -->
-<!-- > For more information check the [CONTRIBUTING.md](.github/CONTRIBUTING.md) file. -->
+> [!NOTE]
+> For more information check the [CONTRIBUTING](.github/CONTRIBUTING.md) file.
 
 
 - **Option 2**: In case you want to run the project, you can install the production dependencies by running the following command:
