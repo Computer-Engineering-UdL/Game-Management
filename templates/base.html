@@ -4,7 +4,18 @@
     <meta charset="UTF-8">
     <title>{% block title %}Game Management{% endblock %}</title>
   </head>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+  {% load static %}
   <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'game-list' %}">Games</a></li>
+        </ul>
+      </nav>
+    </header>
     <main>
       {% block content %}
       {% endblock %}
