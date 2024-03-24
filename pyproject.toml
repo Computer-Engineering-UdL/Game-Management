@@ -18,6 +18,10 @@ djhtml = "^3.0.6"
 
 [tool.ruff]
 lint.ignore = ["F401"]
+lint.exclude = ["*/migrations/*"]
+
+[tool.ruff.format]
+quote-style = "single"
 
 [build-system]
 requires = ["poetry-core"]
