@@ -21,4 +21,4 @@ jobs:
         run: pip install ruff
 
       - name: Lint with ruff
-        run: ruff . --exclude venv --exclude __pycache__
+        run: ruff check . --exclude venv --exclude __pycache__
