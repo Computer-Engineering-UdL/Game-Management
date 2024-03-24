@@ -1,0 +1,24 @@
+name: Lint Django Templates with djhtml
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install djhtml
+        run: pip install djhtml
+
+      - name: Lint with djhtml
+        run: djhtml .

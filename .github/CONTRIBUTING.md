@@ -71,8 +71,8 @@ poetry update <dependency>
 Every pull request should pass its checks in order to be merged. To merge a pull request, it is necessary to be reviewed
 by at least one maintainer. The pull request should also pass the following checks:
 
-- **Ruff**: Every pull request should pass the Ruff checks in order to be merged. In order to check the code style, run the
-  following command:
+- **Ruff**: Every pull request should pass the Ruff checks in order to be merged. In order to check the code style, run
+  the following command:
   ```bash
   ruff format
   ```
@@ -82,22 +82,20 @@ by at least one maintainer. The pull request should also pass the following chec
   ```
   Take in mind that ruff also accept the check command to check the code style without formatting it.
   ```bash
-    ruff check
-    ```
-- **Prettier**: Every pull request should pass the Prettier checks in order to be merged. In order to check the code style,
-  run the following command:
-  ```bash
-  prettier --check .
+  ruff check
   ```
-  Or if you want to format the code:
+- **DJHTML**: Every pull request should pass the [Django HTML](https://github.com/rtts/djhtml) checks in order to be
+  merged. To format the code style, run the following command:
   ```bash
-  prettier --write .
+  djhtml .
   ```
-- **Tests**: Every pull request should pass the tests in order to be merged. In order to run the tests, run the following
+- **Tests**: Every pull request should pass the tests in order to be merged. In order to run the tests, run the
+  following
   command:
   ```bash
   python manage.py test
   ```
+
 > [!NOTE]
 > These commands should be run in the root directory of the project.
 
