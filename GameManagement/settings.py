@@ -12,9 +12,12 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+import dotenv
+dotenv.load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -23,9 +26,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY", "default_secret_key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "True")
+DEBUG = True
 
 ALLOWED_HOSTS = []
+
 
 # Application definition
 
@@ -36,8 +40,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "GameLibrary",
-    "Accounts",
 ]
 
 MIDDLEWARE = [
@@ -70,15 +72,26 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "GameManagement.wsgi.application"
 
+
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+if os.getenv("DOCKER_ENVIRONMENT") == "true":
+    POSTGRES_HOST = os.getenv("POSTGRES_HOST")
+else:
+    POSTGRES_HOST = "localhost"
+
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.getenv("POSTGRES_DB", "default_db"),
+        "USER": os.getenv("POSTGRES_USER", "default_user"),
+        "PASSWORD": os.getenv("POSTGRES_PASSWORD", "default_password"),
+        "HOST": POSTGRES_HOST,
+        "PORT": os.getenv("POSTGRES_PORT", 5432)
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -98,6 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
@@ -109,26 +123,16 @@ USE_I18N = True
 
 USE_TZ = True
 
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-LOGIN_REDIRECT_URL = "home"
-LOGOUT_REDIRECT_URL = "home"
-
-SIGNUP_IMPLEMENTED = True
-
-if SIGNUP_IMPLEMENTED:
-    SIGNUP_REDIRECT_URL = "home"
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
