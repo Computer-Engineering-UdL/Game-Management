@@ -16,6 +16,9 @@ pillow = "^10.2.0"
 ruff = "^0.3.3"
 prettier = "^0.0.7"
 
+[tool.ruff]
+lint.ignore = ["F401"]
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
