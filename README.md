@@ -51,15 +51,49 @@ cd Game-Management
     poetry install --no-dev
     ```
 
-## Usage
+## Deploy
 
-Execute the following command to start the server
-
+### Local deployment
+1. Access the virtual environment
+```bash
+poetry shell
+```
+2. Run the application
 ```bash
 python manage.py runserver
 ```
+Also, you can apply the following commands to generate and apply the database migrations
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
 
-Then, open your browser and go to the [localhost](http://localhost:8000/) url.
+### Docker deployment
+
+1. Build and run the containers
+```bash
+docker-compose up
+```
+2. Open a new terminal, and access the desired container
+```bash
+docker exec -it <container_name> || <container_id> bash
+```
+If the app container is accessed you apply the following command to start managing the migrations and orchestrating the app:
+```bash
+poetry shell
+```
+Otherwise, if the db container is accessed, we can do database administration tasks. A good way to directly access the database is:
+```bash
+docker exec -it <db_container_name> || <db_container_id> psql -U admin -d app_db
+```
+
+For both, when the app is running, open your browser and go to the [localhost](http://localhost:8000/) url.
+
+**Important:** if any dependency exception occurs it's probably because you have to run
+```bash
+poetry lock
+poetry install
+```
 
 ## Matrix of responsibilities
 
