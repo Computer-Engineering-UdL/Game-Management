@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+import dotenv
+
+dotenv.load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -73,10 +76,19 @@ WSGI_APPLICATION = "GameManagement.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+if os.getenv("DOCKER_ENVIRONMENT") == "true":
+    POSTGRES_HOST = os.getenv("POSTGRES_HOST")
+else:
+    POSTGRES_HOST = "localhost"
+
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.getenv("POSTGRES_DB", "default_db"),
+        "USER": os.getenv("POSTGRES_USER", "default_user"),
+        "PASSWORD": os.getenv("POSTGRES_PASSWORD", "default_password"),
+        "HOST": POSTGRES_HOST,
+        "PORT": os.getenv("POSTGRES_PORT", 5432)
     }
 }
 
