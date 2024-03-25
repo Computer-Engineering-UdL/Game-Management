@@ -4,7 +4,7 @@
 {% load static %}
 {% block content %}
     <link rel="stylesheet" type="text/css" href="{% static 'user-registration.css' %}"/>
-    
+
     {% if form.errors %}
         <p class="notification-err">
             Invalid data. Please try again
@@ -20,8 +20,8 @@
             <p class="notification-err"> ---. </p>
         {% endif %}
     {% endif %}
-    
-    
+
+
     <div class="login-box">
         <h2>Sign Up</h2>
         <form method="post">
@@ -45,7 +45,7 @@
                 {{ form.password2 }}
                 <label for="{{ form.password2.id_for_label }}">Repeat password</label>
             </div>
-            <p>  Already have an account? <a href="{% url 'login' %}">Log in</a></p>
+            <p>Already have an account? <a href="{% url 'login' %}">Log in</a></p>
 
             <button type="submit" class="submit-button">
                 <span></span>
@@ -54,7 +54,6 @@
                 <span></span>
                 Submit
             </button>
-
         </form>
     </div>
 {% endblock %}

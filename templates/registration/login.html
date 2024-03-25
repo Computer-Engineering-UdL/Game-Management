@@ -30,6 +30,8 @@
         {{ form.password }}
         <label for="{{ form.password.id_for_label }}">Password</label>
       </div>
+      <p>Don't have an account? <a href="{% url 'signup' %}">Sign Up</a></p>
+
       <button type="submit" class="submit-button">
         <span></span>
         <span></span>

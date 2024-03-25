@@ -15,7 +15,7 @@
           <li><a href="{% url 'game-list' %}">Games</a></li>
           {% if not user.is_authenticated %}
             <li><a href="{% url 'login' %}">Login</a></li>
-            <li><a href="{% url 'signup' %}">Sign up</a></li>
+            <li><a href="{% url 'signup' %}">Sign Up</a></li>
           {% else %}
             <li><a href="{% url 'logout' %}">Logout</a></li>
           {% endif %}
@@ -27,15 +27,15 @@
       {% endblock %}
     </main>
     {% if messages %}
-        {% for message in messages %}
-            {% if message.tags == 'error' %}
-                <p class="notification-err">{{ message }}</p>
-            {% elif message.tags == 'success' %}
-                <p class="notification-success">{{ message }}</p>
-            {% else %}
-                <p class="notification-info">{{ message }}</p>
-            {% endif %}
-        {% endfor %}
+      {% for message in messages %}
+        {% if message.tags == 'error' %}
+          <p class="notification-err">{{ message }}</p>
+        {% elif message.tags == 'success' %}
+          <p class="notification-success">{{ message }}</p>
+        {% else %}
+          <p class="notification-info">{{ message }}</p>
+        {% endif %}
+      {% endfor %}
     {% endif %}
   </body>
 </html>
