@@ -5,6 +5,19 @@
   <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}" />
   {% load static %}
 
+  {% if form.errors %}
+    <p class="notification-err">
+      Your username and password didn't match. Please try again.
+    </p>
+  {% endif %} {% if next %} {% if user.is_authenticated %}
+    <p class="notification-err">
+      Your account doesn't have access to this page. To proceed, please login
+      with an account that has access.
+    </p>
+  {% else %}
+    <p class="notification-err">Please login to see this page.</p>
+  {% endif %}{% endif %}
+
   <div class="login-box">
     <h2>Login</h2>
     <form method="post">
