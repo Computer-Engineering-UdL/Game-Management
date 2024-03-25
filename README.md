@@ -89,11 +89,14 @@ docker exec -it <db_container_name> || <db_container_id> psql -U admin -d app_db
 
 For both, when the app is running, open your browser and go to the [localhost](http://localhost:8000/) url.
 
-**Important:** if any dependency exception occurs it's probably because you have to run
-```bash
-poetry lock
-poetry install
-```
+> [!IMPORTANT]
+> If any dependency exception occurs it's probably because you have to run
+> ```bash
+> poetry lock
+> ```
+> ```bash
+> poetry install
+>  ```
 
 ## Matrix of responsibilities
 
