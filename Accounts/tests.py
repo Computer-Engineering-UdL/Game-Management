@@ -1,0 +1,51 @@
+from django.test import TestCase
+from django.contrib.auth.models import User
+from Accounts import forms
+
+USERNAME = 'testuser'
+EMAIL = 'testuser@testing.com'
+PASSWORD = 'marroanoteGuarro1233482934#*'
+
+
+# STATUS CODES:
+# 302: Stands for a redirect status code
+# 200: Stands for a success status code
+# 400: Stands for a bad request status code
+# 404: Stands for a not found status code
+# 500: Stands for a server error status code
+
+class TestLogin(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user(username=USERNAME, email=EMAIL, password=PASSWORD)
+
+    def test_login(self):
+        response = self.client.login(username=USERNAME, password=PASSWORD)
+        self.assertTrue(response)
+
+    def test_login_redirect(self):
+        response = self.client.post('/accounts/login/', {'username': USERNAME, 'password': PASSWORD})
+        self.assertEqual(response.status_code, 302)
+
+    def test_logout_redirect(self):
+        response = self.client.post('/accounts/logout/')
+        self.assertEqual(response.status_code, 302)
+
+
+class TestSignup(TestCase):
+    def test_signup(self):
+        response = self.client.post('/accounts/signup/', {
+            'username': USERNAME,
+            'email': EMAIL,
+            'password1': PASSWORD,
+            'password2': PASSWORD
+        })
+        self.assertEquals(response.status_code, 302)
+
+    def test_signup_fail(self):
+        response = self.client.post('/accounts/signup/', {
+            'username': USERNAME,
+            'email': EMAIL,
+            'password1': PASSWORD,
+            'password2': PASSWORD + '1'
+        })
+        self.assertEquals(response.status_code, 400)

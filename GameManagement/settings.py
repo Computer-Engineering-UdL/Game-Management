@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "GameLibrary",
+    "Accounts",
 ]
 
 MIDDLEWARE = [
@@ -127,7 +128,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
 
-SIGNUP_IMPLEMENTED = False
+SIGNUP_IMPLEMENTED = True
 
 if SIGNUP_IMPLEMENTED:
-    SIGNUP_REDIRECT_URL = "/accounts/login/"
+    SIGNUP_REDIRECT_URL = "home"
