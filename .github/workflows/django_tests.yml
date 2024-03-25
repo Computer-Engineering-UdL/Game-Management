@@ -2,12 +2,42 @@ name: Django CI
 
 on:
   push:
-    branches: ['main']
+    branches: ['production']
   pull_request:
-    branches: ['main']
+    branches: ['production']
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:latest
+        env:
+          POSTGRES_DB: app_db
+          POSTGRES_USER: admin
+          POSTGRES_PASSWORD: switch
+        ports:
+          - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.11
+      - name: Install Dependencies
+        run: |
+          pip install poetry
+          poetry lock
+          poetry install
+      - name: Run Tests
+        run: |
+          poetry run python manage.py test
+
   build:
+    needs: test
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 4
@@ -25,6 +55,3 @@ jobs:
           pip install poetry
           poetry lock
           poetry install
-      - name: Run Tests
-        run: |
-          poetry run python manage.py test
