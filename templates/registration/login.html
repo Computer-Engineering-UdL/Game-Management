@@ -2,7 +2,7 @@
 {% block content %}
 
   {% load static %}
-  <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'user-registration.css' %}" />
   {% load static %}
 
   {% if form.errors %}
@@ -19,7 +19,7 @@
   {% endif %}{% endif %}
 
   <div class="login-box">
-    <h2>Login</h2>
+    <h2>Log In</h2>
     <form method="post">
       {% csrf_token %}
       <div class="user-box">

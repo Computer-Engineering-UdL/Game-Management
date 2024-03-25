@@ -66,6 +66,41 @@ main {
     overflow: hidden;
 }
 
+.notification-success {
+  border: 2px solid #088508;
+  background-color: rgba(107, 208, 107, 0.5);
+  display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s ease,
+    color 0.3s ease;
+    animation: fadeOut 3s forwards;
+    position: fixed;
+    top: 10%;
+    right: 5%;
+    height: auto;
+    overflow: hidden;
+}
+
+
+.notification-info {
+    border: 2px solid #b6a708;
+    background-color: rgba(200, 206, 91, 0.5);
+    animation: fadeOut 3s forwards;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s ease,
+    color 0.3s ease;
+    position: fixed;
+    top: 10%;
+    right: 5%;
+    height: auto;
+    overflow: hidden;
+}
+
 @keyframes fadeOut {
     0% {
         opacity: 1;
