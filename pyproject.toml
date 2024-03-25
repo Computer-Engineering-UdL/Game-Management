@@ -7,6 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
+python-dotenv = "^0.19.0"
 django = "^5.0.3"
 psycopg2-binary = "^2.9.9"
 pillow = "^10.2.0"
@@ -14,14 +15,7 @@ pillow = "^10.2.0"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.3.3"
-djhtml = "^3.0.6"
-
-[tool.ruff]
-lint.ignore = ["F401"]
-lint.exclude = ["*/migrations/*"]
-
-[tool.ruff.format]
-quote-style = "single"
+prettier = "^0.0.7"
 
 [build-system]
 requires = ["poetry-core"]
