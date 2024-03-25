@@ -4,7 +4,7 @@ from Accounts import forms
 
 USERNAME = 'testuser'
 EMAIL = 'testuser@testing.com'
-PASSWORD = 'marroanoteGuarro1233482934#*'
+PASSWORD = 'testUserPassword1234'
 
 
 # STATUS CODES:
