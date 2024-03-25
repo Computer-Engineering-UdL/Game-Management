@@ -27,11 +27,15 @@
       {% endblock %}
     </main>
     {% if messages %}
-      <ul class="messages">
         {% for message in messages %}
-          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% if message.tags == 'error' %}
+                <p class="notification-err">{{ message }}</p>
+            {% elif message.tags == 'success' %}
+                <p class="notification-success">{{ message }}</p>
+            {% else %}
+                <p class="notification-info">{{ message }}</p>
+            {% endif %}
         {% endfor %}
-      </ul>
     {% endif %}
   </body>
 </html>
