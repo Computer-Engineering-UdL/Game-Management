@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Game Management{% endblock %}</title>
+    <title>Game Management{% block title %}{% endblock %}</title>
   </head>
   {% load static %}
   <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
@@ -26,16 +26,5 @@
       {% block content %}
       {% endblock %}
     </main>
-    {% if messages %}
-      {% for message in messages %}
-        {% if message.tags == 'error' %}
-          <p class="notification-err">{{ message }}</p>
-        {% elif message.tags == 'success' %}
-          <p class="notification-success">{{ message }}</p>
-        {% else %}
-          <p class="notification-info">{{ message }}</p>
-        {% endif %}
-      {% endfor %}
-    {% endif %}
   </body>
 </html>
