@@ -5,29 +5,32 @@
 {% block content %}
     <h2>Game List</h2>
 
-
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Game</th>
-                <th>Platforms</th>
-                <th>Genre</th>
-                <th>Global Rating</th>
-                <th>Cover</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for game in games %}
+    {% if games %}
+        <table class="table table-striped">
+            <thead>
                 <tr>
-                    <td><a href="{% url 'game-detail' pk=game.id %}">{{ game.name }}</a></td>
-                    <td>{{ game.platforms }}</td>
-                    <td>{{ game.genre }}</td>
-                    <td>{{ game.global_rating }}</td>
-                    <td>{{ game.cover }}</td>
+                    <th>Game</th>
+                    <th>Platforms</th>
+                    <th>Genre</th>
+                    <th>Global Rating</th>
+                    <th>Cover</th>
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {% for game in games %}
+                    <tr>
+                        <td><a href="{% url 'game-detail' pk=game.id %}">{{ game.name }}</a></td>
+                        <td>{{ game.platforms }}</td>
+                        <td>{{ game.genre }}</td>
+                        <td>{{ game.global_rating }}</td>
+                        <td>{{ game.cover }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>There are no games</p>
+    {% endif %}
 
 
 {% endblock %}
