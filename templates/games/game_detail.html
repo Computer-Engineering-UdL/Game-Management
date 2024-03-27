@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %} - Game Detail{% endblock %}
+
+{% block content %}
+    <h2>Game Detail</h2>
+
+    <p><strong>Name:</strong> {{ game.name }}</p>
+    <p><strong>Creator:</strong> {{ game.creator }}</p>
+    <p><strong>Platforms:</strong> {{ game.platforms }}</p>
+    <p><strong>Release Date:</strong> {{ game.release_date }}</p>
+    <p><strong>Is Free:</strong> {{ game.is_free }}</p>
+    <p><strong>Number of players:</strong> {{ game.num_players }}</p>
+    <p><strong>Global Rating:</strong> {{ game.global_rating }}</p>
+    <p><strong>Is Multiplayer:</strong> {{ game.is_multiplayer }}</p>
+    <p><strong>Genere:</strong> {{ game.genere }}</p>
+    <p><strong>Description:</strong> {{ game.description }}</p>
+    <p><strong>Price:</strong> {{ game.price }}</p>
+    <p><strong>Created at:</strong> {{ game.created_at }}</p>
+    <p><strong>Image:</strong> <img src="{{ game.cover }}" alt="{{ game.name }}" width="200"></p>
+    <p><a href="{% url 'game-list' %}">Back to Games</a></p>
+
+{% endblock %}

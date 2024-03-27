@@ -1,6 +1,7 @@
 from django.urls import path
-from GameLibrary.views import GameListView
+from GameLibrary import views
 
 urlpatterns = [
-    path("games/", GameListView.as_view(), name="game-list"),
+    path("games/", views.game_list, name="game-list"),
+    path("games/<int:pk>/", views.game_detail, name="game-detail"),
 ]
